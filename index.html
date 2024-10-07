@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinanzasInteligentes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 </head>
 
@@ -40,32 +40,36 @@
         <div class="form-box">
         
             <!------------------- login form -------------------------->
+        
             <div class="login-container" id="login">
                 <div class="top">
                     <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
                     <header>Login</header>
                 </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Username or Email">
-                    <i class="bx bx-user"></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Password">
-                    <i class="bx bx-lock-alt"></i>
-                </div>
-                <div class="input-box">
-                    <input type="submit" class="submit" value="Sign In">
-                </div>
-                <div class="two-col">
-                    <div class="one">
-                        <input type="checkbox" id="login-check">
-                        <label for="login-check"> Remember Me</label>
+                <form action="login.php" method="POST">
+                    <div class="input-box">
+                        <input type="text" name="email" class="input-field" placeholder="Email">
+                        <i class="bx bx-user"></i>
                     </div>
-                    <div class="two">
-                        <label><a href="#">Forgot password?</a></label>
+                    <div class="input-box">
+                        <input type="password" name="password" class="input-field" placeholder="Password">
+                        <i class="bx bx-lock-alt"></i>
                     </div>
-                </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Sign In">
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="login-check">
+                            <label for="login-check"> Remember Me</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Forgot password?</a></label>
+                        </div>
+                    </div>
+                </form>
             </div>
+        </form>
 
 
             <!------------------- registration form -------------------------->
@@ -74,27 +78,29 @@
                     <span>Have an account? <a href="#" onclick="login()">Login</a></span>
                     <header>Sign Up</header>
                 </div>
-                <div class="two-forms">
-                    <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Firstname">
-                        <i class="bx bx-user"></i>
+                <form action="controllers/register.php" method="POST">
+                    <div class="two-forms">
+                        <div class="input-box">
+                            <input type="text" name="firstname" class="input-field" placeholder="Firstname">
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="lastname" class="input-field" placeholder="Lastname">
+                            <i class="bx bx-user"></i>
+                        </div>
                     </div>
                     <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Lastname">
-                        <i class="bx bx-user"></i>
+                        <input type="text"  name="email" class="input-field" placeholder="Email">
+                        <i class="bx bx-envelope"></i>
                     </div>
-                </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Email">
-                    <i class="bx bx-envelope"></i>
-                </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Password">
-                    <i class="bx bx-lock-alt"></i>
-                </div>
-                <div class="input-box">
-                    <input type="submit" class="submit" value="Register">
-                </div>
+                    <div class="input-box">
+                        <input type="password" name="password" class="input-field" placeholder="Password">
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" name="register" class="submit" value="Register">
+                    </div>
+                </form>
                 <div class="two-col">
                     <div class="one">
                         <input type="checkbox" id="register-check">
