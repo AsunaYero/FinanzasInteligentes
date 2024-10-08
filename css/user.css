@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: rgba(242, 240, 240, 0.62);
+}
+
+body {
+    margin: 0; /* Elimina márgenes del body */
+    font-family: 'Poppins', sans-serif;
+}
+.header {
+    background: url('../img/header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border-bottom: 1px solid #ccc; /* Borde inferior */
+}
+.header, .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    width: 100%; /* Ancho completo */
+    height: 65px; /* Altura */    
+}
+.wrapper {
+    background: rgba(102, 101, 101, 0.626);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-left: 20px;
+}
+.header .header-left .bi {
+    font-size: 50px; 
+    margin-right: 10px; 
+    color: white;
+}
+.user-info p {
+    margin: 0; 
+    color: white;
+    font-size: 10px;
+    font-weight: 100;
+}
+.userName{
+    margin: 0; 
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+.header-right {
+    text-align: right;
+    padding: 10px;
+    margin-right: 40px; 
+}
+
+.logo {
+    margin: 0;
+    color: white; 
+    font-size: 25px;
+    font-weight: 600;
+}
