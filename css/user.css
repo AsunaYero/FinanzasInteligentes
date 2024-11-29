@@ -26,6 +26,7 @@ body {
 }
 .wrapper {
     background: rgba(102, 101, 101, 0.626);
+
 }
 
 .header-left {
@@ -62,4 +63,80 @@ body {
     color: white; 
     font-size: 25px;
     font-weight: 600;
+}
+
+/*Menu fijo*/
+.navbar {
+    position: fixed;
+    top: 65px; /* Alineado debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(242, 240, 240, 0.62);
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(79, 79, 79, 0.7);
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(199, 199, 199, 0.62);
+    border-radius: 5px;
+}
+
+/* --- Estilos responsivos --- */
+
+@media(max-width: 991px) {
+
+    .header-right {
+        min-height: 70px;
+    }
+
+    .header-left {
+        min-height: 70px;
+    }
+
+    .logo {
+        top: 0;
+        padding: 20px;
+    }
+
+    .navbar {
+        position: absolute; /* El menú será posicionado bajo el header */
+        top: 10;
+        left: 0;
+        right: 0;
+        background-color: rgba(242, 240, 240, 0.62); /* Color más visible en pantallas pequeñas */
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        flex-direction: row; /* Disposición horizontal para dispositivos móviles */
+        justify-content: space-around; /* Distribuir los enlaces */
+    }
+
+    .nav-links li {
+        margin: 0 5px;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        font-size: 16px;
+    }
 }
