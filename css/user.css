@@ -99,6 +99,65 @@ body {
     background-color: rgba(199, 199, 199, 0.62);
     border-radius: 5px;
 }
+.dashboard {
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 80%; /* Ajustamos el ancho al 100% de la pantalla */
+    max-width: 1200px; /* Limita el tamaño máximo */
+    margin-top: 80px;
+    left: 50%; /* Lo posiciona en el centro horizontal */
+    transform: translateX(-50%); /* Ajusta para que quede perfectamente centrado */
+}
+.card {
+    background:rgba(242, 240, 240, 0.62);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px  rgba(79, 79, 79, 0.7);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .icon {
+    font-size: 2rem;
+    color: #333;
+}
+
+.card .content h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card .content p {
+    margin: 5px 0 0;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.blue {
+    border-left: 5px solid #007bff;
+}
+
+.green {
+    border-left: 5px solid #28a745;
+}
+
+.yellow {
+    border-left: 5px solid #ffc107;
+}
+
+.red {
+    border-left: 5px solid #dc3545;
+}
+
 
 /* --- Estilos responsivos --- */
 
@@ -138,5 +197,25 @@ body {
     .nav-links a {
         padding: 10px;
         font-size: 16px;
+    }
+    .dashboard {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptación a tamaños pequeños */
+        padding: 10px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card .icon {
+        font-size: 2rem;
+    }
+
+    .card h4 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
     }
 }
