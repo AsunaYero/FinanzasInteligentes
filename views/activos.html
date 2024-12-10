@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/activos.css">
+    <title>FinanzasInteligentes</title>
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-left">
+                <i class="bi bi-person-circle"> </i>
+                <div class="user-info">
+                    <p>Welcome</p> 
+                        <div class="userName">
+                            <strong id="userName">User Name</strong> <!-- Debo de traer el nombre del usuario registrado con php -->
+                        </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <p class="logo">SALIR</p>
+            </div>
+        </div>
+    </div>
+    </header>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#">Gastos</a></li>
+            <li><a href="#">Activos</a></li>
+            <li><a href="#">Ahorros</a></li>
+            <li><a href="#">Ingresos</a></li>
+            <li><a href="#">Metas</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <!-- Sección de Activo Total -->
+        <div class="active-summary">
+            <div class="saldo">
+                <h2></i> Activo Total</h2>
+                <p>$10.00</p>
+            </div>
+        </div>
+    
+        <!-- Botón para agregar activo -->
+        <div class="add-asset">
+            <button class="btn-add">
+                <i class="bi bi-plus-circle"></i> Agregar Activo
+            </button>
+        </div>
+    
+        <!-- Lista de activos -->
+        <h2 class="section-title">Lista de Activos</h2>
+        <table class="assets-table">
+            <thead>
+                <tr>
+                    <th>No. de Activo</th>
+                    <th>Nombre</th>
+                    <th>Saldo Aprobado</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Activo Ejemplo</td>
+                    <td>$500.00</td>
+                    <td>01/01/2024</td>
+                    <td>
+                        <button class="btn-edit"><i class="bi bi-pencil"></i></button>
+                        <button class="btn-delete"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+                <!-- Aquí se pueden agregar más filas dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+</body>
