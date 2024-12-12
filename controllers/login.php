@@ -10,9 +10,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0){
-        echo "Inicio de sesión exitoso";
-    }
-    else{
-        echo "Correo o contraseña incorrectos";
-    }
+        header("Location: ../views/user.html"); 
+        exit(); 
+    } else { 
+        echo "Correo o contraseña incorrectos"; }
 }

@@ -10,95 +10,6 @@ body {
     margin: 0; /* Elimina márgenes del body */
     font-family: 'Poppins', sans-serif;
 }
-.header {
-    background: url('../img/header.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    border-bottom: 1px solid #ccc; /* Borde inferior */
-}
-.header, .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;   
-    width: 100%; /* Ancho completo */
-    height: 65px; /* Altura */    
-}
-.wrapper {
-    background: rgba(102, 101, 101, 0.626);
-
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-left: 20px;
-}
-.header .header-left .bi {
-    font-size: 50px; 
-    margin-right: 10px; 
-    color: white;
-}
-.user-info p {
-    margin: 0; 
-    color: white;
-    font-size: 10px;
-    font-weight: 100;
-}
-.userName{
-    margin: 0; 
-    color: white;
-    font-size: 18px;
-    font-weight: 100;
-}
-.header-right {
-    text-align: right;
-    padding: 10px;
-    margin-right: 40px; 
-}
-
-.logo {
-    margin: 0;
-    color: white; 
-    font-size: 25px;
-    font-weight: 600;
-}
-
-/*Menu fijo*/
-.navbar {
-    position: fixed;
-    top: 65px; /* Alineado debajo del header */
-    left: 0;
-    width: 100%;
-    background-color: rgba(242, 240, 240, 0.62);
-    padding: 10px 0;
-    z-index: 100;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: rgba(79, 79, 79, 0.7);
-    font-size: 18px;
-    padding: 5px 10px;
-}
-
-.nav-links a:hover {
-    background-color: rgba(199, 199, 199, 0.62);
-    border-radius: 5px;
-}
 .dashboard {
     position: fixed;
     display: grid;
@@ -210,42 +121,6 @@ body {
 /* --- Estilos responsivos --- */
 
 @media(max-width: 991px) {
-
-    .header-right {
-        min-height: 70px;
-    }
-
-    .header-left {
-        min-height: 70px;
-    }
-
-    .logo {
-        top: 0;
-        padding: 20px;
-    }
-
-    .navbar {
-        position: absolute; /* El menú será posicionado bajo el header */
-        top: 10;
-        left: 0;
-        right: 0;
-        background-color: rgba(242, 240, 240, 0.62); /* Color más visible en pantallas pequeñas */
-        padding: 10px 0;
-    }
-
-    .nav-links {
-        flex-direction: row; /* Disposición horizontal para dispositivos móviles */
-        justify-content: space-around; /* Distribuir los enlaces */
-    }
-
-    .nav-links li {
-        margin: 0 5px;
-    }
-
-    .nav-links a {
-        padding: 10px;
-        font-size: 16px;
-    }
     .dashboard {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptación a tamaños pequeños */
         padding: 10px;

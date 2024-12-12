@@ -18,12 +18,9 @@ if (isset($_POST['register'])) {
             $result = mysqli_query($conn, $consult);
             
             if($result){
-                echo "Inicio de sesión exitoso";
-            }
-            else{
-                echo "El registro no fue exitoso";
-            }
-        }else{
-            echo "Completa todos los campos";
-        }
+                header("Location: ../views/user.html"); 
+        exit();
+    } else { 
+        echo "Correo o contraseña incorrectos"; }
+    }
 }
