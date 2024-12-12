@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../css/header.css">
     <title>FinanzasInteligentes</title>
 </head>
 <header class="header">
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="header-right">
-                <a href="../../index.html" class="logo">SALIR</a>
+                <a href="../index.html" class="logo">SALIR</a>
             </div>
         </div>
     </div>

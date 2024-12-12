@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0){
-        header("Location: ../views/user.html"); 
+        header("Location: ../views/usuario.php"); 
         exit(); 
     } else { 
         echo "Correo o contraseña incorrectos"; }

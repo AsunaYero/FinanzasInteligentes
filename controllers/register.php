@@ -18,7 +18,7 @@ if (isset($_POST['register'])) {
             $result = mysqli_query($conn, $consult);
             
             if($result){
-                header("Location: ../views/user.html"); 
+                header("Location: ../views/usuario.php"); 
         exit();
     } else { 
         echo "Correo o contraseña incorrectos"; }
