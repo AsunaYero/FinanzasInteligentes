@@ -1,262 +1,502 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-body{
+/* Reset y configuración base */
+* {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: white;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0; /* Elimina márgenes del body */
     font-family: 'Poppins', sans-serif;
-}
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; /* Ocupa todo el ancho */
-    z-index: 1000; /* Asegura que el header esté sobre otros elementos */
-    background: url('../img/header.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    border-bottom: 1px solid #ccc; /* Borde inferior */
-}
-.header, .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;   
-    width: 100%; /* Ancho completo */
-    height: 65px; /* Altura */    
-}
-.wrapper {
-    background: rgba(102, 101, 101, 0.626);
-
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
 }
 
-.header-left {
+/* Contenedor principal */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 50px 20px; /* Más padding arriba para separar del header */
+}
+
+/* Resumen de activos */
+.active-summary {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 30px;
     display: flex;
     align-items: center;
-    padding: 10px;
-    margin-left: 20px;
-}
-.header .header-left .bi {
-    font-size: 50px; 
-    margin-right: 10px; 
+    gap: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-}
-.user-info p {
-    margin: 0; 
-    color: white;
-    font-size: 10px;
-    font-weight: 100;
-}
-.userName{
-    margin: 0; 
-    color: white;
-    font-size: 18px;
-    font-weight: 100;
-}
-.header-right {
-    text-align: right;
-    padding: 10px;
-    margin-right: 40px; 
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px 0 40px 0; /* Margen superior adicional */
+    /*box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    text-align: center;*/
 }
 
-.logo {
-    margin: 0;
-    color: white; 
-    font-size: 25px;
+.active-summary .saldo h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.8rem;
     font-weight: 600;
-}
-
-/*Menu fijo*/
-.navbar {
-    position: fixed;
-    z-index: 1000; /* Asegura que el header esté sobre otros elementos */
-    position: fixed;
-    top: 65px; /* Alineado debajo del header */
-    left: 0;
-    width: 100%;
-    background-color: rgba(242, 240, 240, 0.62);
-    padding: 10px 0;
-    z-index: 100;
-}
-
-.nav-links {
     display: flex;
+    align-items: center;
     justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: rgba(79, 79, 79, 0.7);
-    font-size: 18px;
-    padding: 5px 10px;
-}
-
-.nav-links a:hover {
-    background-color: rgba(199, 199, 199, 0.62);
-    border-radius: 5px;
-}
-
-.content {
-    margin: 110px auto; /* Añade margen para separarlo del dashboard */
-    padding: 10px;
-    max-width: 90%;
-}
-
-.active-summary{
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
+    gap: 15px;
 }
 
 .active-summary .saldo i {
-    font-size: 2rem; /* Ajusta el tamaño del ícono aquí */
+    font-size: 2.2rem;
 }
 
 .active-summary .saldo p {
-    font-size: 25px;
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Botón agregar activo */
 .add-asset {
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     text-align: right;
 }
 
 .btn-add {
-    background-color: rgba(77, 77, 77, 0.675);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 30px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .btn-add:hover {
-    background-color: rgba(32, 32, 34, 0.62);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
+.btn-add i {
+    font-size: 1.2rem;
+}
+
+/* Título de sección */
 .section-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
 }
 
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+/* Contenedor de tabla */
+.table-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+/* Tabla de activos */
 .assets-table {
     width: 100%;
     border-collapse: collapse;
+    font-size: 0.95rem;
 }
 
 .assets-table th,
 .assets-table td {
-    padding: 10px;
+    padding: 20px 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .assets-table th {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
+.assets-table th:first-child {
+    border-top-left-radius: 15px;
+}
+
+.assets-table th:last-child {
+    border-top-right-radius: 15px;
+}
+
+.assets-table tr:hover {
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease;
+}
+
+.assets-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Botones de acción */
 .btn-edit,
 .btn-delete {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 0 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+}
+
+.btn-edit:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.btn-delete:hover {
+    background-color: #ffebee;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
 }
 
 .btn-edit i {
-    color: #007bff;
+    color: #2196F3;
 }
 
 .btn-delete i {
-    color: #dc3545;
+    color: #f44336;
 }
 
-/* --- Estilos responsivos --- */
+/* Modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+}
 
-@media (max-width: 991px) {
-    .header-right,
-    .header-left {
-        min-height: 70px;
+.modal-content {
+    background-color: white;
+    margin: 3% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+    animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-60px) scale(0.95);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 
-    .logo {
-        top: 0;
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close:hover {
+    color: #333;
+    background-color: #f0f0f0;
+    transform: rotate(90deg);
+}
+
+.modal h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.modal h2 i {
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background-color: #fafbfc;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+/* Botones del formulario */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.btn-cancel,
+.btn-save {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.btn-cancel {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 2px solid #e9ecef;
+}
+
+.btn-cancel:hover {
+    background-color: #e9ecef;
+    color: #495057;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-save {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Estados vacíos */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .content {
+        padding: 100px 15px 30px 15px;
+    }
+    
+    .active-summary {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+    
+    .active-summary .saldo h2 {
+        font-size: 1.5rem;
+    }
+    
+    .active-summary .saldo p {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+    
+    .assets-table th,
+    .assets-table td {
+        padding: 15px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 80px 10px 20px 10px;
+    }
+    
+    .active-summary {
         padding: 20px;
     }
-
-    .navbar {
-        position: fixed;  
-        top: 10;
-        left: 0;
-        right: 0;
-        background-color: rgba(242, 240, 240, 0.62); /* Color más visible en pantallas pequeñas */
-        padding: 10px 0;
-    }
-
-    .nav-links {
-        flex-direction: row; /* Disposición horizontal para dispositivos móviles */
-        justify-content: space-around; /* Distribuir los enlaces */
-    }
-
-    .nav-links li {
-        margin: 0 5px;
-    }
-
-    .nav-links a {
-        padding: 10px;
-        font-size: 16px;
-    }
-
-    .assets-table {
-        font-size: 14px;
-    }
-
-    .dashboard {
+    
+    .active-summary .saldo h2 {
+        font-size: 1.3rem;
         flex-direction: column;
+        gap: 10px;
+    }
+    
+    .active-summary .saldo p {
+        font-size: 2rem;
+    }
+    
+    .btn-add {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .assets-table {
+        font-size: 0.85rem;
+    }
+    
+    .assets-table th,
+    .assets-table td {
+        padding: 12px 8px;
+    }
+    
+    .btn-edit,
+    .btn-delete {
+        font-size: 1.1rem;
+        padding: 8px;
+        min-width: 35px;
+        height: 35px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-cancel,
+    .btn-save {
+        width: 100%;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
-    .header-left i {
-        font-size: 20px;
+    .active-summary .saldo h2 {
+        font-size: 1.1rem;
     }
-
-    .user-info p,
-    .userName strong {
-        font-size: 14px;
+    
+    .active-summary .saldo p {
+        font-size: 1.8rem;
     }
-
-    .btn-add {
-        font-size: 14px;
-        padding: 8px 16px;
+    
+    .section-title {
+        font-size: 1.4rem;
     }
-
+    
     .assets-table th,
     .assets-table td {
-        font-size: 12px;
-        padding: 5px;
+        font-size: 0.8rem;
+        padding: 10px 6px;
     }
-
-    .card {
-        width: 100%;
-        margin-bottom: 20px;
+    
+    .modal-content {
+        padding: 25px;
+        margin: 10% auto;
     }
-
-    .card .icon {
-        font-size: 30px;
+    
+    .modal h2 {
+        font-size: 1.5rem;
+    }
+    
+    .form-group input {
+        padding: 12px;
     }
 }

@@ -1,32 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-body{
+body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: rgba(242, 240, 240, 0.62);
 }
 
-body {
-    margin: 0; /* Elimina márgenes del body */
-    font-family: 'Poppins', sans-serif;
-}
+/* HEADER */
 .header {
     background: url('../img/header.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    border-bottom: 1px solid #ccc; /* Borde inferior */
-}
-.header, .wrapper {
+    border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
-    align-items: center;   
-    width: 100%; /* Ancho completo */
-    height: 65px; /* Altura */    
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    position: fixed; /* Opcional: si también quieres que el header quede fijo */
+    top: 0;
+    left: 0;
+    z-index: 101;
 }
-.wrapper {
-    background: rgba(102, 101, 101, 0.626);
 
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    background: rgba(102, 101, 101, 0.626);
 }
 
 .header-left {
@@ -35,41 +39,45 @@ body {
     padding: 10px;
     margin-left: 20px;
 }
+
 .header .header-left .bi {
-    font-size: 50px; 
-    margin-right: 10px; 
+    font-size: 50px;
+    margin-right: 10px;
     color: white;
 }
+
 .user-info p {
-    margin: 0; 
+    margin: 0;
     color: white;
     font-size: 10px;
     font-weight: 100;
 }
-.userName{
-    margin: 0; 
+
+.userName {
+    margin: 0;
     color: white;
     font-size: 18px;
     font-weight: 100;
 }
+
 .header-right {
     text-align: right;
     padding: 50px;
-    margin-right: 40px; 
+    margin-right: 40px;
 }
 
 .logo {
-    color: white; 
+    color: white;
     font-size: 25px;
     font-weight: 600;
     padding: 10px;
     text-decoration: none;
 }
 
-/*Menu fijo*/
+/* MENU FIJO */
 .navbar {
     position: fixed;
-    top: 65px; /* Alineado debajo del header */
+    top: 65px; /* Debajo del header */
     left: 0;
     width: 100%;
     background-color: rgba(242, 240, 240, 0.62);
@@ -101,35 +109,41 @@ body {
     border-radius: 5px;
 }
 
+/* SEPARACIÓN DEL CONTENIDO PARA QUE NO QUEDE TAPADO */
+.main-content {
+    padding-top: 130px; /* 65px header + 65px navbar */
+}
 
-/* --- Estilos responsivos --- */
-
+/* RESPONSIVE */
 @media(max-width: 991px) {
     .header-left {
         min-height: 70px;
     }
 
-    .header-right { 
-        height: auto; /* Ajusta la altura para pantallas más pequeñas */ 
-        padding: 20px; /* Añade un poco de padding */ 
-    } 
-    .logo { 
-        font-size: 20px; /* Ajusta el tamaño de la fuente */ 
-        padding: 20px; /* Ajusta el padding */ 
-        margin-top: 10px; /* Ajusta el margen superior */ }
+    .header-right {
+        height: auto;
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+        padding: 20px;
+        margin-top: 10px;
+    }
 
     .navbar {
-        position: absolute; /* El menú será posicionado bajo el header */
-        top: 10;
+        position: fixed; /* mantener fijo también en móviles */
+        top: 65px;
         left: 0;
         right: 0;
-        background-color: rgba(242, 240, 240, 0.62); /* Color más visible en pantallas pequeñas */
+        background-color: rgba(242, 240, 240, 0.62);
         padding: 10px 0;
+        z-index: 100;
     }
 
     .nav-links {
-        flex-direction: row; /* Disposición horizontal para dispositivos móviles */
-        justify-content: space-around; /* Distribuir los enlaces */
+        flex-direction: row;
+        justify-content: space-around;
     }
 
     .nav-links li {
@@ -141,4 +155,3 @@ body {
         font-size: 16px;
     }
 }
-

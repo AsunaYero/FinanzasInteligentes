@@ -1,145 +1,232 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-body{
+/* Reset y configuración base */
+* {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: rgba(242, 240, 240, 0.62);
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0; /* Elimina márgenes del body */
     font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
 }
+
+/* Contenedor principal del dashboard */
 .dashboard {
-    position: fixed;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    width: 80%; /* Ajustamos el ancho al 100% de la pantalla */
-    max-width: 1200px; /* Limita el tamaño máximo */
-    margin-top: 80px;
-    left: 50%; /* Lo posiciona en el centro horizontal */
-    transform: translateX(-50%); /* Ajusta para que quede perfectamente centrado */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 200px 20px 50px 20px; /* Más padding arriba para separar del header */ 
 }
+
+/* Tarjetas del dashboard */
 .card {
-    background:rgba(242, 240, 240, 0.62);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px  rgba(79, 79, 79, 0.7);
-    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 30px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    transition: transform 0.2s;
+    gap: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card:hover::before {
+    width: 8px;
 }
 
 .card .icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
+    transition: all 0.3s ease;
+}
+
+.card:hover .icon {
+    transform: scale(1.1);
+}
+
+.card .content {
+    flex: 1;
 }
 
 .card .content h4 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #333;
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .card .content p {
-    margin: 5px 0 0;
-    font-size: 1.5rem;
-    color: #555;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
 }
 
+/* Colores de las tarjetas */
 .blue {
     border-left: 5px solid #007bff;
+}
+
+.blue::before {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.blue:hover .icon {
+    color: #007bff;
 }
 
 .green {
     border-left: 5px solid #28a745;
 }
 
+.green::before {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+}
+
+.green:hover .icon {
+    color: #28a745;
+}
+
 .yellow {
     border-left: 5px solid #ffc107;
+}
+
+.yellow::before {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+}
+
+.yellow:hover .icon {
+    color: #ffc107;
 }
 
 .red {
     border-left: 5px solid #dc3545;
 }
 
-
-/* Estilos de la pagina de activos */
-.btn-add {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 15px;
-    background-color: #4CAF50; /* Verde */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-.btn-add i {
-    margin-right: 5px;
+.red::before {
+    background: linear-gradient(135deg, #dc3545, #c82333);
 }
 
-/* Tabla de Activos */
-.assets-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-.assets-table th, .assets-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-.assets-table th {
-    background-color: #f4f4f4;
-}
-.assets-table tr:hover {
-    background-color: #f9f9f9;
+.red:hover .icon {
+    color: #dc3545;
 }
 
-.btn-edit, .btn-delete {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-}
-.btn-edit {
-    color: #007bff; /* Azul */
-}
-.btn-delete {
-    color: #dc3545; /* Rojo */
-}
-
-
-/* --- Estilos responsivos --- */
-
-@media(max-width: 991px) {
+/* Responsive */
+@media (max-width: 1200px) {
     .dashboard {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptación a tamaños pequeños */
-        padding: 10px;
+        max-width: 1000px;
+        gap: 20px;
+        padding: 0 15px;
     }
-
+    
     .card {
-        padding: 15px;
+        padding: 25px;
     }
+    
+    .card .content h4 {
+        font-size: 1rem;
+    }
+    
+    .card .content p {
+        font-size: 1.8rem;
+    }
+}
 
+@media (max-width: 991px) {
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 120px auto 40px auto;
+        padding: 0 15px;
+    }
+    
+    .card {
+        padding: 25px;
+    }
+    
+    .card .icon {
+        font-size: 2.2rem;
+    }
+    
+    .card .content h4 {
+        font-size: 0.95rem;
+    }
+    
+    .card .content p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 100px auto 30px auto;
+        padding: 0 10px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
     .card .icon {
         font-size: 2rem;
     }
-
-    .card h4 {
-        font-size: 1rem;
-    }
-
-    .card p {
+    
+    .card .content h4 {
         font-size: 0.9rem;
+    }
+    
+    .card .content p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard {
+        margin: 80px auto 20px auto;
+        padding: 0 10px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .card .icon {
+        font-size: 1.8rem;
+    }
+    
+    .card .content h4 {
+        font-size: 0.85rem;
+    }
+    
+    .card .content p {
+        font-size: 1.2rem;
     }
 }
 
