@@ -8,11 +8,11 @@ body {
 
 /* HEADER */
 .header {
-    background: url('../img/header.jpg');
+    background: color(#004aad);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #004aad;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,13 +30,13 @@ body {
     align-items: center;
     width: 100%;
     height: 65px;
-    background: rgba(102, 101, 101, 0.626);
+    background:  #004aad;
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     margin-left: 20px;
 }
 
@@ -63,12 +63,12 @@ body {
 .header-right {
     text-align: right;
     padding: 50px;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
-.logo {
+.exit {
     color: white;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 600;
     padding: 10px;
     text-decoration: none;
@@ -80,7 +80,7 @@ body {
     top: 65px; /* Debajo del header */
     left: 0;
     width: 100%;
-    background-color: rgba(242, 240, 240, 0.62);
+    background-color: rgba(236, 232, 232, 0.62);
     padding: 10px 0;
     z-index: 100;
 }

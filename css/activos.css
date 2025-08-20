@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* Reset y configuración base */
 * {
     margin: 0;
     padding: 0;
@@ -8,98 +7,95 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
+    background:rgba(242, 240, 240, 0.62);
 }
 
 /* Contenedor principal */
 .content {
-    max-width: 1200px;
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 120px 20px 50px 20px; /* Más padding arriba para separar del header */
+    padding: 120px 20px 60px 20px; 
 }
 
 /* Resumen de activos */
 .active-summary {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    padding: 30px;
     display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    justify-content: center;   
+    align-items: center;                      
+    margin: 20px auto;  
     padding: 30px;
-    border-radius: 15px;
-    margin: 20px 0 40px 0; /* Margen superior adicional */
-    /*box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-    text-align: center;*/
+    border-radius: 15px; 
+    background: white;
+    box-shadow: 0 5px 10px rgba(179, 179, 179, 0.62);
 }
+
+/*Estilos de los saldos*/
+.saldo {
+    text-align: center;
+    flex: 1;                   
+}
+
+.active-summary .saldo:first-child {
+    border-right: 2px solid rgba(79, 79, 79, 0.7);
+}
+
 
 .active-summary .saldo h2 {
     margin: 0 0 15px 0;
-    font-size: 1.8rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    font-size: 1.4rem;  
+    font-weight: 300;
+    text-align: center;  
+    font-family: inherit; 
+    color: rgba(26, 26, 26, 0.7);
 }
 
-.active-summary .saldo i {
-    font-size: 2.2rem;
-}
 
 .active-summary .saldo p {
     font-size: 3rem;
     margin: 0;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.759);
+    font-family: inherit; 
+    text-align: center;
 }
 
 /* Botón agregar activo */
 .add-asset {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     text-align: right;
 }
 
 .btn-add {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #004aad;
     color: white;
     border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
+    padding: 20px 35px;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.20rem;
+    font-family: inherit; 
+    font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-    display: inline-flex;
+    box-shadow: 0 5px 10px rgba(179, 179, 179, 0.62);
     align-items: center;
     gap: 10px;
 }
 
 .btn-add:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .btn-add i {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 /* Título de sección */
 .section-title {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #333;
-    font-weight: 600;
+    color: rgba(0, 0, 0, 0.759);
+    font-family: inherit; 
+    font-weight: 500;
     position: relative;
     padding-bottom: 10px;
 }
@@ -109,9 +105,9 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
+    width: 70px;
     height: 3px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: rgba(79, 79, 79, 0.7);
     border-radius: 2px;
 }
 
@@ -119,7 +115,7 @@ body {
 .table-container {
     background: white;
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px rgba(179, 179, 179, 0.62);
     overflow: hidden;
     margin-bottom: 40px;
 }
@@ -128,7 +124,7 @@ body {
 .assets-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .assets-table th,
@@ -139,32 +135,20 @@ body {
 }
 
 .assets-table th {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #004aad;
     color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    font-family: inherit; 
+    font-weight: 500;
+    font-size: 1.20rem;
     letter-spacing: 0.5px;
 }
-
-.assets-table th:first-child {
-    border-top-left-radius: 15px;
+.assets-table td {
+    color: rgba(0, 0, 0, 0.759);
+    font-family: inherit; 
+    font-weight: 400;
 }
 
-.assets-table th:last-child {
-    border-top-right-radius: 15px;
-}
-
-.assets-table tr:hover {
-    background-color: #f8f9fa;
-    transition: background-color 0.3s ease;
-}
-
-.assets-table tr:last-child td {
-    border-bottom: none;
-}
-
-/* Botones de acción */
+/* Botones de acción */ 
 .btn-edit,
 .btn-delete {
     background-color: transparent;
@@ -195,7 +179,7 @@ body {
 }
 
 .btn-edit i {
-    color: #2196F3;
+    color: #004aad;
 }
 
 .btn-delete i {
@@ -211,7 +195,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(226, 226, 226, 0.6);
     backdrop-filter: blur(8px);
 }
 

@@ -20,8 +20,12 @@ $incomeCategories = $incomeController->getIncomeCategories();
         <!-- Sección de ingreso total -->
         <div class="active-summary">
             <div class="saldo">
-                <h2><i class="bi bi-wallet2"></i>Total Income</h2>
-                <p>$<?php echo number_format($totalIncome, 2); ?></p>
+                <h2>Total Monthly</h2>
+                <p>$ <?php echo number_format($totalIncome, 2); ?></p>
+            </div>
+            <div class="saldo">
+                <h2>Total Annual</h2>
+                <p>$ <?php echo number_format($totalIncome, 2); ?></p>
             </div>
         </div>
 

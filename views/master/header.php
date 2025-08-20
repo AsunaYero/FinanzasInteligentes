@@ -28,7 +28,7 @@ $nombreUsuario = isset($_SESSION['Name']) ? $_SESSION['Name'] : 'Invitado';
             </div>
         </div>
         <div class="header-right">
-            <a href="../controllers/logout.php" class="logo">SALIR</a>
+            <a href="../controllers/logout.php" class="exit"><i class="bi bi-box-arrow-right"></i> </a>
         </div>
     </div>
 </header>
